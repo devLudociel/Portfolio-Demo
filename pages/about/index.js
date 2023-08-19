@@ -20,18 +20,17 @@ const aboutData = [
       {
         title: 'Web Development',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          <FaHtml5 key={iconHt}/>,
+          <FaCss3 key={iconCss}/>,
+          <FaJs key={iconJs}/>,
+          <FaReact key={iconReact} />,
+          <SiNextdotjs key={iconNode}/>,
+          <SiFramer key={iconFramer}/>,
         ],
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [<FaFigma key={iconFigma}/>, <SiAdobexd key={iconAdobe}/>, <SiAdobephotoshop key={iconPHS} />],
       },
     ],
   },
@@ -202,7 +201,7 @@ const About = () => {
                 <div className='flex gap-x-4'>
                   {/* icons */}
                   {item.icons?.map((icon, itemIndex) => {
-                    return <div className='text-2xl text-white'>{icon}</div>
+                    return <div key={itemIndex} className='text-2xl text-white'>{icon}</div>
                   })}
                 </div>
               </div>
