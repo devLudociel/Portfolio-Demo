@@ -6,7 +6,6 @@ import {
   FaCss3,
   FaJs,
   FaReact,
-  FaWordpress,
   FaFigma,
 } from 'react-icons/fa';
 
@@ -20,17 +19,17 @@ const aboutData = [
       {
         title: 'Web Development',
         icons: [
-          <FaHtml5 key={iconHt}/>,
-          <FaCss3 key={iconCss}/>,
-          <FaJs key={iconJs}/>,
-          <FaReact key={iconReact} />,
-          <SiNextdotjs key={iconNode}/>,
-          <SiFramer key={iconFramer}/>,
+          <FaHtml5 />,
+          <FaCss3 />,
+          <FaJs />,
+          <FaReact />,
+          <SiNextdotjs />,
+          <SiFramer />,
         ],
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma key={iconFigma}/>, <SiAdobexd key={iconAdobe}/>, <SiAdobephotoshop key={iconPHS} />],
+        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
       },
     ],
   },
@@ -84,8 +83,6 @@ const aboutData = [
 ];
 
 //components
-
-import Avatar from '../../components/Avatar'
 import Circles from '../../components/Circles'
 
 //framer motion
@@ -102,15 +99,6 @@ const About = () => {
   console.log(index);
   return <div className='h-full bg-primary/30 py-32 text-center xl:text-left'>
     <Circles />
-    {/*Avatar Image */}
-    <motion.div
-      variants={fadeIn('right', 0.2)}
-      initial='hidden'
-      animate='show'
-      exit='hidden'
-      className='hidden xl:flex absolute bottom-0 -left-[370px]'>
-      <Avatar />
-    </motion.div>
     <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
       {/*text */}
       <div className='flex-1 flex flex-col justify-center'>
@@ -127,7 +115,7 @@ const About = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-          className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'>2 year ago, I began Freelancing as a developer. Since then, I´ve done remote work for agencies, consulted for startup, and collaborated on digital products for business and consumer use.</motion.p>
+          className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'>2 year ago, I began Freelancing as a developer. Since then, I`ve done remote work for agencies, consulted for startup, and collaborated on digital products for business and consumer use.</motion.p>
 
         {/*counters */}
         <motion.div
@@ -192,16 +180,16 @@ const About = () => {
           })}
         </div>
         <div className='py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start'>
-          {aboutData[index].info.map((item, itemIndex) => {
+          {aboutData[index].info.map((item, itemTitle) => {
             return (
-              <div key={itemIndex} className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60'>
+              <div key={itemTitle} className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60'>
                 <div className='font-light mb-2 md:mb-0'>{item.title}</div>
                 <div className='hidden md:flex'>-</div>
                 <div>{item.stage}</div>
                 <div className='flex gap-x-4'>
                   {/* icons */}
-                  {item.icons?.map((icon, itemIndex) => {
-                    return <div key={itemIndex} className='text-2xl text-white'>{icon}</div>
+                  {item.icons?.map((icon, itemIcons) => {
+                    return <div key={itemIcons} className='text-2xl text-white'>{icon}</div>
                   })}
                 </div>
               </div>
